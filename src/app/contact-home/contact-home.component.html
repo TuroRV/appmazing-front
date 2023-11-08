@@ -1,27 +1,20 @@
 <table mat-table [dataSource]="contacts" class="mat-elevation-z8">
 
-  <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
-
-  <!-- Position Column -->
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef> ID </th>
     <td mat-cell *matCellDef="let contact"> {{contact.id}} </td>
   </ng-container>
 
-  <!-- Name Column -->
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef> Nombre </th>
     <td mat-cell *matCellDef="let contact"> {{contact.name}} </td>
   </ng-container>
 
-  <!-- Weight Column -->
   <ng-container matColumnDef="sname1">
     <th mat-header-cell *matHeaderCellDef> Primer Apellido </th>
     <td mat-cell *matCellDef="let contact"> {{contact.sname1}} </td>
   </ng-container>
 
-  <!-- Symbol Column -->
   <ng-container matColumnDef="sname2">
     <th mat-header-cell *matHeaderCellDef> Segundo Apellido </th>
     <td mat-cell *matCellDef="let contact"> {{contact.sname2}} </td>
@@ -38,6 +31,7 @@
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="openDetailForm(row)"></tr>
+  
 </table>
 
