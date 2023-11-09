@@ -14,4 +14,11 @@ export class ProductsService {
     const headers = new HttpHeaders();
     return this.http.get<any>(url, {headers});
   }
+
+  getProduct(p_id): Observable<any> {
+    const url = 'http://localhost:30030/products/get';
+    const headers = new HttpHeaders().set('Content-type', 'application/json');
+    const body = JSON.stringify({id: p_id});
+    return this.http.post(url,body, {headers});
+  }
 }

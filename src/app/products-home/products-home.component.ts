@@ -16,6 +16,10 @@ export class ProductsHomeComponent implements OnInit {
     this.productsService.getProducts().subscribe(data=>{this.products = data;})
   }
 
+  openDetailForm(row: any){
+    this.router.navigate(['product', row.id]);
+  }
+
   displayedColumns: string[] = ['id','name','stock','price','active','date_added','category'];
 
 }
