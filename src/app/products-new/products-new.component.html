@@ -1,0 +1,46 @@
+<mat-card class="card">
+  <mat-card-title>Nuevo Producto</mat-card-title>
+  <mat-card-content class="card-content">
+    <form (submit)="newProduct()">
+      <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput type="text" name="name" [(ngModel)]="name">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Stock</mat-label>
+        <input matInput type="number" name="stock" [(ngModel)]="stock">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Precio</mat-label>
+        <input matInput type="number" name="price" [(ngModel)]="price">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Activo</mat-label>
+        
+        <input matInput type="text" name="active" [(ngModel)]="active">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Fecha</mat-label>
+        <input matInput type="date" name="date_added" [(ngModel)]="date_added">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+      <mat-label>Categoría</mat-label>
+      <input matInput type="number" name="category" [(ngModel)]="category.id">
+    </mat-form-field>
+    <mat-radio-group aria-label="Select an option" id="radius-button">
+      <mat-radio-button value="1">En Stock</mat-radio-button>
+      <mat-radio-button value="0">Agotado</mat-radio-button>
+    </mat-radio-group>
+
+      <div class="button">
+        <button mat-raised-button color="primary" type="submit">
+          <mat-icon>save</mat-icon>
+        </button>
+        <button mat-raised-button color="warn" type="button" (click)="cancelInsert()">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </div>
+    </form>
+    
+  </mat-card-content>
+</mat-card>

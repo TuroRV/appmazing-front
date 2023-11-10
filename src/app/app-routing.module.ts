@@ -5,6 +5,7 @@ import { ContactDetailComponent } from './contact-detail/contact-detail.componen
 import { ProductsHomeComponent } from './products-home/products-home.component';
 import { ProductsDetailComponent } from './products-detail/products-detail.component';
 import { ContactNewComponent } from './contact-new/contact-new.component';
+import { ProductsNewComponent } from './products-new/products-new.component';
 
 
 const routes: Routes = [
@@ -12,9 +13,8 @@ const routes: Routes = [
   {path: 'contact/new', component: ContactNewComponent},
   {path: 'contact/:id', component: ContactDetailComponent},
   {path: 'products', component: ProductsHomeComponent},
-  {path: 'product/:id', component: ProductsDetailComponent},
-
-
+  {path: 'product/new', component: ProductsNewComponent},
+  {path: 'product/:id', component: ProductsDetailComponent}
 ];
 
 @NgModule({
