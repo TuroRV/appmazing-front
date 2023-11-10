@@ -14,11 +14,10 @@
         <mat-label>Precio</mat-label>
         <input matInput type="number" name="price" [(ngModel)]="price">
       </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Activo</mat-label>
-        
-        <input matInput type="text" name="active" [(ngModel)]="active">
-      </mat-form-field>
+      <mat-radio-group aria-label="Select an option" name="name" [(ngModel)]="active">
+        <mat-radio-button value="true">En Stock</mat-radio-button>
+        <mat-radio-button value="false">Agotado</mat-radio-button>
+      </mat-radio-group>
       <mat-form-field appearance="outline">
         <mat-label>Fecha</mat-label>
         <input matInput type="date" name="date_added" [(ngModel)]="date_added">
@@ -27,10 +26,6 @@
       <mat-label>Categoría</mat-label>
       <input matInput type="number" name="category" [(ngModel)]="category.id">
     </mat-form-field>
-    <mat-radio-group aria-label="Select an option" id="radius-button">
-      <mat-radio-button value="1">En Stock</mat-radio-button>
-      <mat-radio-button value="0">Agotado</mat-radio-button>
-    </mat-radio-group>
 
       <div class="button">
         <button mat-raised-button color="primary" type="submit">
