@@ -27,7 +27,7 @@ export class ProductsUpdateComponent implements OnInit {
   updateProduct(){
     
     this.productsService.updateProduct(this.product);
-    this.navigateDetail;
+    this.navigateDetail();
 
   }
 

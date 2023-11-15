@@ -14,7 +14,7 @@
       <mat-icon>event_available</mat-icon><strong>Disponible:</strong> {{product.active}}
     </p>
     <p>
-      <mat-icon>date_range</mat-icon><strong>Fecha:</strong> {{product.date_added}}
+      <mat-icon>date_range</mat-icon><strong>Fecha:</strong> {{product.date_added | date:'mediumDate'}}
     </p>
     <p>
       <mat-icon>list_alt</mat-icon><strong>Categoría:</strong> {{product.category?.name}}
@@ -24,8 +24,8 @@
     <button mat-raise-button type="button" (click)="updateProduct()">
       <mat-icon>edit</mat-icon>
     </button>
-    <button mat-raise-button type="button" color="warn" (click)="closeProduct()">
-      <mat-icon>close</mat-icon>
+    <button mat-raise-button color="warn" type="button" (click)="closeProduct()">
+      <mat-icon color="warn">close</mat-icon>
     </button>
   </mat-card-actions>
 </mat-card>
