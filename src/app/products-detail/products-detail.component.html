@@ -20,4 +20,12 @@
       <mat-icon>list_alt</mat-icon><strong>Categoría:</strong> {{product.category?.name}}
     </p>
   </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-raise-button type="button" (click)="updateProduct()">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-raise-button type="button" color="warn" (click)="closeProduct()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-card-actions>
 </mat-card>

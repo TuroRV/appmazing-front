@@ -1,26 +1,26 @@
 <mat-card class="card">
-  <mat-card-title>Nuevo Producto</mat-card-title>
+  <mat-card-title>Editar Producto</mat-card-title>
   <mat-card-content class="card-content">
-    <form (submit)="newProduct()">
+    <form (submit)="updateProduct()">
       <mat-form-field appearance="outline">
         <mat-label>Nombre</mat-label>
-        <input matInput type="text" name="name" [(ngModel)]="name">
+        <input matInput type="text" name="name" [(ngModel)]="product.name">
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Stock</mat-label>
-        <input matInput type="number" name="stock" [(ngModel)]="stock">
+        <input matInput type="number" name="stock" [(ngModel)]="product.stock">
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Precio</mat-label>
-        <input matInput type="number" name="price" [(ngModel)]="price">
+        <input matInput type="number" name="price" [(ngModel)]="product.price">
       </mat-form-field>
-      <mat-radio-group aria-label="Select an option" name="name" [(ngModel)]="active">
+      <mat-radio-group aria-label="Select an option" name="active" [(ngModel)]="product.active">
         <mat-radio-button value="true">En Stock</mat-radio-button>
         <mat-radio-button value="false">Agotado</mat-radio-button>
       </mat-radio-group>
       <mat-form-field appearance="outline">
         <mat-label>Fecha</mat-label>
-        <input matInput type="date" name="date_added" [(ngModel)]="date_added">
+        <input matInput type="date" name="date_added" [(ngModel)]="product.date_added">
       </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Categoría</mat-label>
@@ -31,10 +31,10 @@
       </mat-select>
     </mat-form-field>
       <div class="button">
-        <button mat-raised-button color="primary" type="submit" (click)="newProduct()">
+        <button mat-raised-button color="primary" type="submit">
           <mat-icon>save</mat-icon>
         </button>
-        <button mat-raised-button color="warn" type="button" (click)="cancelInsert()">
+        <button mat-raised-button color="warn" type="button" (click)="cancelUpdate()">
           <mat-icon>cancel</mat-icon>
         </button>
       </div>

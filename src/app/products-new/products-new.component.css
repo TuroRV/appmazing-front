@@ -9,3 +9,9 @@
 .button button {
   margin-left: 1%;
 }
+.mat-radio-button {
+  margin-left: 5px;
+}
+.mat-form-field {
+  margin-left: 5px;
+}

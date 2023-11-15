@@ -20,6 +20,10 @@ export class ProductsHomeComponent implements OnInit {
     this.router.navigate(['product', row.id]);
   }
 
-  displayedColumns: string[] = ['id','name','stock','price','active','date_added','category'];
+  updateProductDetail(product: any){
+    this.router.navigate(['/product/update',product])
+  }
+
+  displayedColumns: string[] = ['id','name','stock','price','active','date_added','category', 'actions'];
 
 }

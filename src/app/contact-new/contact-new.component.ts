@@ -38,4 +38,6 @@ email: string;
   navigateToHome(){
     this.router.navigate(['/contacts']);
   }
+
+  
 }

@@ -1,0 +1,22 @@
+.card{
+  margin: 20px 40px 20px 4px
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+.button{
+  display: flex;
+  justify-content: flex-end;
+}
+.button button {
+  margin-left: 1%;
+}
+.mat-radio-group {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  
+}
+.mat-radio-button {
+  margin-right: 20px;
+}
