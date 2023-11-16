@@ -11,7 +11,7 @@
       <mat-icon>euro_symbol</mat-icon><strong>Precio:</strong> {{product.price}}
     </p>
     <p>
-      <mat-icon>event_available</mat-icon><strong>Disponible:</strong> {{product.active}}
+      <mat-icon>event_available</mat-icon><strong>Disponible:</strong> {{product.active ? 'En Stock':'Agotado'}}
     </p>
     <p>
       <mat-icon>date_range</mat-icon><strong>Fecha:</strong> {{product.date_added | date:'mediumDate'}}
