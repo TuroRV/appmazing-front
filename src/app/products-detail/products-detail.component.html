@@ -21,11 +21,14 @@
     </p>
   </mat-card-content>
   <mat-card-actions align="end">
-    <button mat-raise-button type="button" (click)="updateProduct()">
+    <button mat-raised-button type="button" (click)="updateProduct()">
       <mat-icon>edit</mat-icon>
     </button>
-    <button mat-raise-button color="warn" type="button" (click)="closeProduct()">
+    <button mat-raised-button type="button" (click)="closeProduct()">
       <mat-icon color="warn">close</mat-icon>
+    </button>
+    <button mat-raised-button type="button" (click)="openDeleteDialog(product.id)">
+      <mat-icon color="warn">delete</mat-icon>
     </button>
   </mat-card-actions>
 </mat-card>
