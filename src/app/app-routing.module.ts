@@ -8,9 +8,11 @@ import { ContactNewComponent } from './contact-new/contact-new.component';
 import { ProductsNewComponent } from './products-new/products-new.component';
 import { ContactUpdateComponent } from './contact-update/contact-update.component';
 import { ProductsUpdateComponent } from './products-update/products-update.component';
+import { ChartsComponent } from './charts/charts.component';
 
 
 const routes: Routes = [
+  {path: '', component: ChartsComponent},
   {path: 'contacts', component: ContactHomeComponent},
   {path: 'contact/new', component: ContactNewComponent},
   {path: 'contact/:id', component: ContactDetailComponent},

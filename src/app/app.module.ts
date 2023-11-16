@@ -17,6 +17,8 @@ import { ContactUpdateComponent } from './contact-update/contact-update.componen
 import { ProductsUpdateComponent } from './products-update/products-update.component';
 import { ContactDeleteComponent } from './contact-delete/contact-delete.component';
 import { ProductsDeleteComponent } from './products-delete/products-delete.component';
+import { ChartsComponent } from './charts/charts.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { ProductsDeleteComponent } from './products-delete/products-delete.compo
     ContactUpdateComponent,
     ProductsUpdateComponent,
     ContactDeleteComponent,
-    ProductsDeleteComponent
+    ProductsDeleteComponent,
+    ChartsComponent
   ],
   entryComponents: [ContactDeleteComponent, ProductsDeleteComponent],
   imports: [
@@ -48,7 +51,8 @@ import { ProductsDeleteComponent } from './products-delete/products-delete.compo
     MatRadioModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatDialogModule
+    MatDialogModule,
+    NgxChartsModule
   
   ],
   providers: [],
