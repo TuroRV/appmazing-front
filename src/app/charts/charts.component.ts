@@ -100,14 +100,16 @@ export class ChartsComponent implements OnInit {
     }
 
     productsInStock(products:any):any{
-      let productsInSTock = [];
+      let productsInSTockData = [];
+      let inStockList = [];
+
       products.forEach(products =>{
         let active = products.active;
         if(active = true){
-          productsInSTock.push(active)
+          productsInSTockData.push(inStockList)
         }
       });
-      return productsInSTock;
+      return inStockList;
     }
   }
 
