@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactsService } from '../contacts.service';
+import { ProductsService } from '../products.service';
+import { CategoryService } from '../category.service';
 
 @Component({
   selector: 'app-charts',
@@ -11,10 +13,10 @@ export class ChartsComponent implements OnInit {
   contactsByFullName = [];
   emailExtensions = [];
   phonePrefixData = [];
-  productsInStockData = [];
-
-
-  constructor(private contactsService: ContactsService,) { }
+  productsInStock = [];
+  overHundred = [];
+  
+  constructor(private contactsService: ContactsService, private productsService: ProductsService) { }
 
   ngOnInit() {
     this.contactsService.getContacts().subscribe(data => {
@@ -22,8 +24,15 @@ export class ChartsComponent implements OnInit {
       this.contactsByFullName = this.calculateContactsByFullNameData(data);
       this.emailExtensions = this.calculateEmailExtensionsData(data);
       this.phonePrefixData = this.generatePhonePrefixData(data);
-      this.productsInStockData = this.productsInStock(data);
-  })}
+  })
+    this.productsService.getProducts().subscribe(data => {
+      this.productsInStock = this.checkProductsInStockData(data);
+      this.overHundred = this.checkProductsOverHundred(data);
+
+
+      
+    })
+}
 
   calculateInitialLettersData(contacts: any[]): any{
     return contacts.reduce((result,contact)=>{
@@ -99,17 +108,36 @@ export class ChartsComponent implements OnInit {
       return phonePrefixData;
     }
 
-    productsInStock(products:any):any{
-      let productsInSTockData = [];
+    checkProductsInStockData(products:any[]):any{
+      
       let inStockList = [];
 
-      products.forEach(products =>{
-        let active = products.active;
-        if(active = true){
-          productsInSTockData.push(inStockList)
+      products.forEach(product =>{
+        
+        if(inStockList.find(item => item.name == product.active)){
+          inStockList.find(item => item.name == product.active).value++
+        } else {
+          inStockList.push({name: product.active, value: 1})
         }
       });
       return inStockList;
+    }
+
+    checkProductsOverHundred(products:any[]):any{
+
+      let overHundred = []; 
+
+      
+      products.forEach(product =>{
+        if (overHundred.find(item=> item.name >= 100)){
+
+ 
+        } else {
+          overHundred.push({name: product.stock, value: 1})
+        }
+
+      });
+return overHundred;
     }
   }
 

@@ -30,12 +30,14 @@
   <mat-card-content>
     <div class="chart-row">
       <div>
-        <p><strong>First chart</strong></p>
-        <ngx-charts-bar-vertical [view]="[400,300]" [results]="productsInStockData" [xAxis]="true" [yAxis]="true" [legend]="false" [showXAxisLabel]="true" [showYAxisLabel]="true" xAxisLabel="x value" yAxisLabel="y value">
+        <p><strong>Productos Activos</strong></p>
+        <ngx-charts-bar-vertical [view]="[400,300]" [results]="productsInStock" [xAxis]="true" [yAxis]="true" [legend]="false" [showXAxisLabel]="true" [showYAxisLabel]="true" xAxisLabel="Activo / No activo" yAxisLabel="Número de productos">
         </ngx-charts-bar-vertical>
       </div>
       <div>
-        <p><strong>Second chart</strong></p>
+        <p><strong>Stock mayor de 100</strong></p>
+        <ngx-charts-bar-vertical [view]="[400,300]" [results]="overHundred" [xAxis]="true" [yAxis]="true" [legend]="false" [showXAxisLabel]="true" [showYAxisLabel]="true" xAxisLabel="Activo / No activo" yAxisLabel="Número de productos">
+        </ngx-charts-bar-vertical>
       </div>
       <div>
         <p><strong>Third chart</strong></p>
