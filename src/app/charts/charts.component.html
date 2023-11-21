@@ -26,7 +26,7 @@
 </mat-card>
 
 <mat-card class="card">
-  <mat-card-title>Charts, Products</mat-card-title>
+  <mat-card-title>Charts. Products</mat-card-title>
   <mat-card-content>
     <div class="chart-row">
       <div>
@@ -36,14 +36,16 @@
       </div>
       <div>
         <p><strong>Stock mayor de 100</strong></p>
-        <ngx-charts-bar-vertical [view]="[400,300]" [results]="overHundred" [xAxis]="true" [yAxis]="true" [legend]="false" [showXAxisLabel]="true" [showYAxisLabel]="true" xAxisLabel="Activo / No activo" yAxisLabel="Número de productos">
+        <ngx-charts-pie-grid [view]="[400,300]" [results]="overHundred" [label]="true"></ngx-charts-pie-grid>
+      </div>
+      <div>
+        <p><strong>Productos según categorías</strong></p>
+        <ngx-charts-pie-chart [view]="[400,300]" [results]="productsByCategory" [labels]="true"></ngx-charts-pie-chart>
+      </div>
+      <div>
+        <p><strong>Precio >10</strong></p>
+        <ngx-charts-bar-vertical [view]="[400,300]" [results]="productsByPrice" [xAxis]="true" [yAxis]="true" [legend]="false" [showXAxisLabel]="true" [showYAxisLabel]="true" xAxisLabel="Activo / No activo" yAxisLabel="Número de productos">
         </ngx-charts-bar-vertical>
-      </div>
-      <div>
-        <p><strong>Third chart</strong></p>
-      </div>
-      <div>
-        <p><strong>Fourth chart</strong></p>
       </div>
     </div>
   </mat-card-content>
